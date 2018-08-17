@@ -1,7 +1,7 @@
 include ../utils/Makefile.help
 include ../utils/Makefile.functions
 
-export NAME := interscalar-com-wordpress
+export NAME := muellerpublic-de
 
 test: setup ##@targets Starts docker compose.
 	docker-compose -p $(NAME) -f test.yaml up
