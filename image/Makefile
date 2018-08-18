@@ -1,6 +1,6 @@
 REPOSITORY := erwin82
 NAME := muellerpublic-de-wordpress
-VERSION ?= v1-r1-1
+VERSION ?= v1-r1-2
 
 .PHONY: build
 build: _build ##@targets Builds the docker image.
