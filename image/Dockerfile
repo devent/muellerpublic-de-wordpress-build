@@ -1,4 +1,4 @@
-FROM  robobeerun/wordpress:v4.9.8-php5.6-fpm-r1
+FROM  robobeerun/wordpress:v4.9.8-php7.1-fpm-r.1
 LABEL maintainer "Erwin Mueller <erwin.mueller@deventm.com>"
 
 USER root
