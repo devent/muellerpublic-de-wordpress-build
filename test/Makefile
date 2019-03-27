@@ -23,3 +23,12 @@ setup:
 count-php-files:
 	docker exec test_$(NAME)_1 find /var/www/html -iname \*.php|wc -l
 .PHONY: count-php-files
+
+access:
+	for file in html db; do \
+	    sudo chown -R `id -u`.`id -g` root/$${file}; \
+	done
+
+fix:
+	sudo chown -R 33.33 root/html
+	sudo chown -R 1001.0 root/db
