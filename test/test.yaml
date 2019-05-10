@@ -5,21 +5,23 @@ services:
   wordpress:
     image: erwin82/muellerpublic-de-wordpress:latest
     environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_NAME: wordpressdb
-      WORDPRESS_DB_USER: wordpressdb
-      WORDPRESS_DB_PASSWORD: wordpressdb
+      WORDPRESS_DB_HOST: "db:3306"
+      WORDPRESS_DB_NAME: "wordpressdb"
+      WORDPRESS_DB_USER: "wordpressdb"
+      WORDPRESS_DB_PASSWORD: "aiz1saJai5aeng3ohvooghijoaf7jah8"
     links:
       - "mariadb:db"
     volumes:
       - "./root/html:/var/www/html"
 
   mariadb:
-    image: bitnami/mariadb:10.2.14-r6
+    image: bitnami/mariadb:10.1.38
     environment:
       ALLOW_EMPTY_PASSWORD: "yes"
+      MARIADB_ROOT_USER: "root"
+      MARIADB_ROOT_PASSWORD: "phaim8ohC0OhGh3eebu4quae1yoqu1To"
       MARIADB_USER: "wordpressdb"
-      MARIADB_PASSWORD: "wordpressdb"
+      MARIADB_PASSWORD: "aiz1saJai5aeng3ohvooghijoaf7jah8"
       MARIADB_DATABASE: "wordpressdb"
     volumes:
       - "./root/db:/bitnami/mariadb"
