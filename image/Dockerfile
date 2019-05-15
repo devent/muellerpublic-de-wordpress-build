@@ -1,12 +1,22 @@
-FROM  robobeerun/wordpress:v5.1.1-php7.1-fpm-r.1
+FROM  robobeerun/wordpress:v5.2.0-php7.1-fpm-r.2
 LABEL maintainer "Erwin Mueller <erwin.mueller@deventm.com>"
 
 USER root
 
-# Install themes
+ADD rootfs/ /
 
 RUN set -x \
-  && /install_wp_theme.sh https://downloads.wordpress.org/theme/carton.1.0.7.zip '59ebcb16edc5a3bba52cbde5ac8c93288c259a48637445910f081a8add88b666'
+  && chmod +x /*.sh
+
+# Install plugins.
+
+RUN set -x \
+  && /install_all_wp_plugins.sh
+
+# Install themes.
+
+RUN set -x \
+  && /install_all_wp_themes.sh
 
 # Finishing up.
 
