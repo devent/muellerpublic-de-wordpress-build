@@ -15,7 +15,7 @@ services:
       - "./root/html:/var/www/html"
 
   mariadb:
-    image: bitnami/mariadb:10.1.38
+    image: bitnami/mariadb:10.1.38-debian-9-r65
     environment:
       ALLOW_EMPTY_PASSWORD: "yes"
       MARIADB_ROOT_USER: "root"
@@ -35,3 +35,10 @@ services:
     volumes:
       - "./nginx-in:/nginx-in"
       - "./root/html:/var/www/html"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8090:80
+    links:
+      - "mariadb:db"
